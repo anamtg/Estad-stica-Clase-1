@@ -1,0 +1,16 @@
+Martínez Granados Juana Anahí
+TAREA 2 / LESSON 10
+1. Find the longest time that an employee has been at the studio
+SELECT MAX(years_employed) as Longest_time
+FROM Employees;
+
+2. For each role, find the average number of years employed by employees in that role
+SELECT AVG(years_employed) as time,role
+FROM employees
+GROUP BY role
+
+3. Find the total number of employee years worked in each building
+SELECT SUM(years_employed) as total_number_of_employee,building
+FROM employees
+GROUP BY building;
+
