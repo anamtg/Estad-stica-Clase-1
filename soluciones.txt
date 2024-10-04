@@ -1,0 +1,75 @@
+Martínez Granados Juana Anahí 276519 Examen B
+#######################################################################################################################################
+# Teoría
+
+1. ¿En qué casos se usan la 4ta y 5ta forma normal?
+a) Como excepciones o casos avanzados que van más allá de las primeras tres formas normales.
+
+2. Explica la diferencia entre la cláusula WHERE y la cláusula HAVING.
+El WHERE y el HAVING son cláusulas que se usan para hacer una consulta y filtrar resultados que determinemos, pero el WHERE se usa para columnas individuales y nosotros filtramos las filas individuales, por otro lado, el HAVING se usa para filtrar grupos de filas de la consulta de los resultados de funciones, esto se ejecuta después de una agrupación de datos por medio de GROUP BY.
+
+
+3. Dado el siguiente query: 
+SELECT 
+    nombre, 
+    salario
+FROM 
+    empleados
+WHERE 
+    salario > 30000
+ORDER BY 
+    salario DESC;
+¿Cuál es el orden de ejecución?
+c) FROM -> WHERE -> SELECT -> ORDER BY
+
+4. ¿Cuáles son las tres anomalías o inconsistencias a las que nos exponemos si una base de datos relacional no está normalizada?
+a) Anomalía de inserción, eliminación y actualización.
+
+5.Explica el siguiente meme:
+
+En la primer imagen veo como un avión está a punto de despegar y dice GIT COMMIT (se está guardando un archivo). La segunda imagen observé que el avión ya está en el aire o volando y dice GIT PUSH (estamos enviando los cambios locales generados al repositorio). Finalmente a tercer imagen veo como las personas están formadas en las escaleras e un avión pero no está el avión y dice GIT ADD (estamos agregando archivos al GIT). La gracia que veo en este meme es que la secuencia no está correcta ya que están guardando y enviando archivos que ni existen porque no los agregaron. 
+#######################################################################################################################################
+# Práctica
+
+1.Obtener el promedio de la edad de los alumnos cuyo apellido termine en 'ez', por ejemplo Pérez, Rodríguez.
+
+```SQL
+-- poner solución debajo de este mensaje
+
+SELECT AVG (edad) AS
+promedio_edad
+FROM alumnos
+WHERE apellido LIKE "%ez";
+
+
+2.Escribe query que muestre el nombre, apellido y calificación máxima de cada alumno. Considera solo las materias en las que el alumno ha recibido calificación.
+
+```SQL
+-- poner solución debajo de este mensaje
+
+SELECT
+a.nombre,
+a.apellido,
+MAX(c.calificacion) AS
+calificacion_maxima
+FROM
+alumnos a
+INNER JOIN calificaciones
+c ON a.expediente = c.expediente
+GROUP BY a.expediente, a.nombre, a.apellido;
+
+
+3.Escribe un query para obtener el nombre y apellido de los alumnos que tienen una calificación superior al promedio.
+
+```SQL
+-- poner solución debajo de este mensaje
+
+SELECT a.nombre, a.apellido
+FROM alumnos a
+INNER JOIN calificaciones c 
+ON a.expediente = c.expediente
+WHERE c.calificacion > (SELECT
+AVG(calificacion)
+FROM calificaciones
+);
+
