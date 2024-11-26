@@ -1,0 +1,16 @@
+REDES NEURONALES
+Estas redes neuronales las hemos ido utilizando a lo largo del tiempo a través de reconocimiento de voz, de caracteres, de imágenes, predicción bursátil, generación de textos, traducción de idiomas, prevención de fraude, conducción autónoma, análisis genético, pronostico de enfermedades o clasificar frutas y verduras. Se trata de una familia de algoritmos muy potentes y avanzados.
+La neurona: unidad básica del procesamiento que vamos a encontrar dentro de una red neuronal. Una neurona lo que hace internamente es algo como un modelo de regresión lineal.
+La red neuronal: varias neuronas en una capa, capa de entrada, capa oculta y capa de salida, en orden secuencial.
+La función de activación: lo que hace es distorsionar nuestro valor de salida añadiéndole de informaciones no lineales.
+Una función de activación escalonada mejora nuestro aprendizaje mientras que una función de activación sigmoide hace que los valores muy grandes se saturen en 1 y los valores muy pequeños se saturen en 0. Por otro lado, tenemos la función de activación tanh, la cual hace que su región varie de -1 a 1 y por último la función de activación relu que se comporta como una función lineal cuando es positiva y consta a 0 cuando el valor d entrada da negativo. Todas estas funciones además de no aportar la linealidad que están buscando también ofrecen beneficios dependiendo de cuando las utilicemos.
+“Ningún ordenador ha sido diseñado para ser consciente de lo que hace. Pero la mayoría del tiempo tampoco lo somos nosotros”. 
+-Marvin Minsky
+Los elementos que conforman una red neuronal. El punto de partida serían los datos, nube de puntos, todo se refiere a clasificación. Existen dos variables de entrada x1 y x2. 
+El contenido del medio en la red neuronal son las capas ocultas.
+Con las redes neuronales podemos resolver problemas complejos de clasificación y regresión, pero esto va de inteligencia artificial, el machine learning, los parámetros de la red neuronal ya no se ajustan manualmente, sino que la propia red aprende por si sola a partir de los datos.
+Una red neuronal realiza su aprendizaje automático a través de un algoritmo llamado Backpropagation, la importancia de este algoritmo es clave dentro de la arquitectura de una red neuronal. También es usado el descenso del gradiente.
+
+MARTÍNEZ GRANADOS JUANA ANAHÍ
+TEMAS SELECTOS DE ESTADÍSTICA
+
